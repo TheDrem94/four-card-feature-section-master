@@ -33,11 +33,9 @@
 }
     
 body {
-  display: flex;
-  align-content: center;
+  padding: 2rem;
   font-family: Poppins;
   text-align: center;
-  padding: 2rem;
   background-color: var(--clr-neutral-lg)
 }
 
@@ -55,6 +53,7 @@ h2 {
 }
 
 p {
+    font-size: 1rem;
     color: var(--clr-neutral-gb);
 }
 
@@ -65,42 +64,91 @@ Every box style
 .box-grid {
   display: grid;
   grid-template-columns: auto;
-  overflow: hidden;
   text-align: left;
-  row-gap: 2rem;
+  row-gap: 3rem;
+  margin-top: 5rem;
+}
+
+.icon {
+  padding: 1rem;;
+  margin-left: 12rem;
 }
 /*
 single box style
 */
 
-.box-1 {
+.box-sup {
   background-color: white;
-  border-radius: 1rem;
-  padding: 3rem;
-  border-top: 0.25rem solid var(--clr-primary-red);
-  box-shadow: 5px 5px 10px  var(--clr-neutral-db);
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  border-top: 0.25rem solid var(--clr-primary-cyan);
+  box-shadow: 0 7px 16px  var(--clr-neutral-db);
 }
 
-.box-2 {
+.box-team {
   background-color: white;
-  border-radius: 1rem;
-  padding: 3rem;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
   border-top: 0.25rem solid var(--clr-primary-red);
-  box-shadow: 5px 5px 10px  var(--clr-neutral-db);
+  box-shadow: 0 7px 16px  var(--clr-neutral-db);
 }
 
-.box-3 {
+.box-karma {
   background-color: white;
-  border-radius: 1rem;
-  padding: 3rem;
-  border-top: 0.25rem solid var(--clr-primary-red);
-  box-shadow: 5px 5px 10px  var(--clr-neutral-db);
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  border-top: 0.25rem solid var(--clr-primary-orange);
+  box-shadow: 0 7px 16px  var(--clr-neutral-db);
 }
 
-.box-4 {
+.box-calc {
   background-color: white;
-  border-radius: 1rem;
-  padding: 3rem;
-  border-top: 0.25rem solid var(--clr-primary-red);
-  box-shadow: 5px 5px 10px  var(--clr-neutral-db);
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  border-top: 0.25rem solid var(--clr-primary-blue);
+  box-shadow: 0 7px 16px  var(--clr-neutral-db);
+}
+
+/*every box style*/
+
+@media (min-width: 42rem) {
+
+  body {
+    padding: 0;
+  }
+
+  .box-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "start mid1 end"
+    "start mid2 end";
+    margin-top: 5rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+
+  .icon {
+    margin-left: 25rem;
+  }
+
+  /*single box style*/
+
+  .box-sup {
+    grid-area: start;
+    align-self: center;
+  }
+
+  .box-team {
+    grid-area: mid1;
+  }
+
+  .box-karma {
+    grid-area: mid2;
+  }
+
+  .box-calc {
+    grid-area: end;
+    align-self: center;
+  }
 }
